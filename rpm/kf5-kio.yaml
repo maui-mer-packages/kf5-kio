@@ -1,0 +1,130 @@
+Name         : kf5-kio
+Version      : 4.99.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : KDE Frameworks 5 Tier 3 solution for filesystem abstraction
+Description  : |
+  KDE Frameworks 5 Tier 3 solution for filesystem abstraction
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - kf5-karchive-devel
+    - kf5-kbookmarks-devel
+    - kf5-kcodecs-devel
+    - kf5-kcompletion-devel
+    - kf5-kconfig-devel
+    - kf5-kconfigwidgets-devel
+    - kf5-kcoreaddons-devel
+    - kf5-kdbusaddons-devel
+    - kf5-kdoctools-devel
+    - kf5-ki18n-devel
+    - kf5-kiconthemes-devel
+    - kf5-kitemviews-devel
+    - kf5-kjobwidgets-devel
+    - kf5-knotifications-devel
+    - kf5-kservice-devel
+    - kf5-solid-devel
+    - kf5-kwidgetsaddons-devel
+    - kf5-kwindowsystem-devel
+    - kf5-kxmlgui-devel
+    - kf5-kwallet-devel
+    - libxml2-devel
+    - libxslt-devel
+    - zlib-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+Requires:
+    - kf5-filesystem
+    - kf5-kwallet-libs
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING.LIB README.md"
+    - "%{_kf5_libdir}/*.so.*"
+    - "%{_kf5_bindir}/ktelnetservice5"
+    - "%{_kf5_bindir}/kcookiejar5"
+    - "%{_kf5_bindir}/kmailservice5"
+    - "%{_kf5_sysconfdir}/xdg/accept-languages.codes"
+    - "%{_kf5_qtplugindir}/kf5/*.so"
+    - "%{_kf5_libexecdir}/kio_http_cache_cleaner"
+    - "%{_kf5_libexecdir}/kioexec"
+    - "%{_kf5_libexecdir}/kpac_dhcp_helper"
+    - "%{_kf5_libexecdir}/kioslave"
+    - "%{_kf5_datadir}/applications/*.desktop"
+    - "%{_kf5_datadir}/dbus-1/interfaces/*.xml"
+    - "%{_kf5_datadir}/kservices5/*"
+    - "%{_kf5_datadir}/kservicetypes5/*"
+    - "%{_kf5_datadir}/knotifications5/proxyscout.*"
+    - "%{_kf5_datadir}/kf5/kcookiejar/domain_info"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Requires:
+        - kf5-karchive-devel
+        - kf5-kbookmarks-devel
+        - kf5-kcodecs-devel
+        - kf5-kcompletion-devel
+        - kf5-kconfig-devel
+        - kf5-kconfigwidgets-devel
+        - kf5-kcoreaddons-devel
+        - kf5-kdbusaddons-devel
+        - kf5-kdoctools-devel
+        - kf5-ki18n-devel
+        - kf5-kiconthemes-devel
+        - kf5-kitemviews-devel
+        - kf5-kjobwidgets-devel
+        - kf5-knotifications-devel
+        - kf5-kservice-devel
+        - kf5-solid-devel
+        - kf5-kwidgetsaddons-devel
+        - kf5-kwindowsystem-devel
+        - kf5-kxmlgui-devel
+        - kf5-kwallet-devel
+      Files:
+          - "%{_kf5_includedir}/*"
+          - "%{_kf5_libdir}/*.so"
+          - "%{_kf5_libdir}/cmake/KF5KIO"
+          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
+    - Name: doc
+      Group: Development/Libraries
+      Summary: Documentation files for %{name}
+      Description: |
+        Documentation files for %{name}.
+      Requires:
+        - kf5-kio%{?_isa} = %{version}-%{release}
+      Files:
+          - "%{_kf5_mandir}/man8/*"
+          - "%{_kf5_datadir}/doc/HTML/en/kioslave5/"
