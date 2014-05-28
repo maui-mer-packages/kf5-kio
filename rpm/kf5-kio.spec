@@ -143,8 +143,8 @@ rm -rf %{buildroot}
 %{_kf5_bindir}/ktelnetservice5
 %{_kf5_bindir}/kcookiejar5
 %{_kf5_bindir}/kmailservice5
-%{_kf5_sysconfdir}/xdg/accept-languages.codes
-%{_kf5_qtplugindir}/kf5/*.so
+%{_kf5_sysconfdir}/xdg/*
+%{_kf5_qtplugindir}/kf5/*
 %{_kf5_libexecdir}/kio_http_cache_cleaner
 %{_kf5_libexecdir}/kioexec
 %{_kf5_libexecdir}/kpac_dhcp_helper
