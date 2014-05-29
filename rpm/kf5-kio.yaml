@@ -45,9 +45,6 @@ PkgBR:
     - kf5-kwindowsystem-devel
     - kf5-kxmlgui-devel
     - kf5-kwallet-devel
-    - libxml2-devel
-    - libxslt-devel
-    - zlib-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -57,6 +54,9 @@ PkgConfigBR:
     - Qt5Widgets
     - Qt5Concurrent
     - Qt5Test
+    - libxml-2.0
+    - libxslt
+    - zlib
 Requires:
     - kf5-filesystem
     - kf5-kwallet-libs

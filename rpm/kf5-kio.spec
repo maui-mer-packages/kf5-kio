@@ -29,6 +29,9 @@ BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Concurrent)
 BuildRequires:  pkgconfig(Qt5Test)
+BuildRequires:  pkgconfig(libxml-2.0)
+BuildRequires:  pkgconfig(libxslt)
+BuildRequires:  pkgconfig(zlib)
 BuildRequires:  kf5-rpm-macros
 BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
@@ -52,9 +55,6 @@ BuildRequires:  kf5-kwidgetsaddons-devel
 BuildRequires:  kf5-kwindowsystem-devel
 BuildRequires:  kf5-kxmlgui-devel
 BuildRequires:  kf5-kwallet-devel
-BuildRequires:  libxml2-devel
-BuildRequires:  libxslt-devel
-BuildRequires:  zlib-devel
 
 %description
 KDE Frameworks 5 Tier 3 solution for filesystem abstraction
