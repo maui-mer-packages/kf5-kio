@@ -45,6 +45,7 @@ PkgBR:
     - kf5-kwindowsystem-devel
     - kf5-kxmlgui-devel
     - kf5-kwallet-devel
+    - libacl-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -113,6 +114,7 @@ SubPackages:
         - kf5-kwindowsystem-devel
         - kf5-kxmlgui-devel
         - kf5-kwallet-devel
+        - libacl-devel
       Files:
           - "%{_kf5_includedir}/*"
           - "%{_kf5_libdir}/*.so"

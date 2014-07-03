@@ -55,6 +55,7 @@ BuildRequires:  kf5-kwidgetsaddons-devel
 BuildRequires:  kf5-kwindowsystem-devel
 BuildRequires:  kf5-kxmlgui-devel
 BuildRequires:  kf5-kwallet-devel
+BuildRequires:  libacl-devel
 
 %description
 KDE Frameworks 5 Tier 3 solution for filesystem abstraction
@@ -84,6 +85,7 @@ Requires:   kf5-kwidgetsaddons-devel
 Requires:   kf5-kwindowsystem-devel
 Requires:   kf5-kxmlgui-devel
 Requires:   kf5-kwallet-devel
+Requires:   libacl-devel
 
 %description devel
 The %{name}-devel package contains the files necessary to develop applications
