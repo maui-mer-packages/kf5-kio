@@ -1,5 +1,5 @@
-Name         : kf5-kio
-Version      : 5.0.0
+Name         : kio
+Version      : 5.1.0
 Release      : 1
 Group        : System/Base
 License      : GPLv2+
@@ -25,26 +25,26 @@ PkgBR:
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
-    - kf5-karchive-devel
-    - kf5-kbookmarks-devel
-    - kf5-kcodecs-devel
-    - kf5-kcompletion-devel
-    - kf5-kconfig-devel
-    - kf5-kconfigwidgets-devel
-    - kf5-kcoreaddons-devel
-    - kf5-kdbusaddons-devel
-    - kf5-kdoctools-devel
-    - kf5-ki18n-devel
-    - kf5-kiconthemes-devel
-    - kf5-kitemviews-devel
-    - kf5-kjobwidgets-devel
-    - kf5-knotifications-devel
-    - kf5-kservice-devel
-    - kf5-solid-devel
-    - kf5-kwidgetsaddons-devel
-    - kf5-kwindowsystem-devel
-    - kf5-kxmlgui-devel
-    - kf5-kwallet-devel
+    - karchive-devel
+    - kbookmarks-devel
+    - kcodecs-devel
+    - kcompletion-devel
+    - kconfig-devel
+    - kconfigwidgets-devel
+    - kcoreaddons-devel
+    - kdbusaddons-devel
+    - kdoctools-devel
+    - ki18n-devel
+    - kiconthemes-devel
+    - kitemviews-devel
+    - kjobwidgets-devel
+    - knotifications-devel
+    - kservice-devel
+    - solid-devel
+    - kwidgetsaddons-devel
+    - kwindowsystem-devel
+    - kxmlgui-devel
+    - kwallet-devel
     - libacl-devel
 PkgConfigBR:
     - Qt5Core
@@ -60,7 +60,7 @@ PkgConfigBR:
     - zlib
 Requires:
     - kf5-filesystem
-    - kf5-kwallet-libs
+    - kwallet-libs
 
 RequiresPost:
     - /sbin/ldconfig
@@ -73,18 +73,18 @@ Files:
     - "%{_kf5_bindir}/ktelnetservice5"
     - "%{_kf5_bindir}/kcookiejar5"
     - "%{_kf5_bindir}/kmailservice5"
-    - "%{_kf5_sysconfdir}/xdg/*"
-    - "%{_qt5_plugindir}/*"
+    - "%{_kf5_configdir}/*"
+    - "%{_kf5_plugindir}/*"
     - "%{_kf5_libexecdir}/kio_http_cache_cleaner"
     - "%{_kf5_libexecdir}/kioexec"
     - "%{_kf5_libexecdir}/kpac_dhcp_helper"
     - "%{_kf5_libexecdir}/kioslave"
-    - "%{_kf5_datadir}/applications/*.desktop"
-    - "%{_kf5_datadir}/dbus-1/interfaces/*.xml"
-    - "%{_kf5_datadir}/kservices5/*"
-    - "%{_kf5_datadir}/kservicetypes5/*"
-    - "%{_kf5_datadir}/knotifications5/proxyscout.*"
-    - "%{_kf5_datadir}/kf5/kcookiejar/domain_info"
+    - "%{_kf5_sharedir}/applications/*.desktop"
+    - "%{_kf5_dbusinterfacesdir}/*.xml"
+    - "%{_kf5_servicesdir}/*"
+    - "%{_kf5_servicetypesdir}/*"
+    - "%{_kf5_sharedir}/knotifications5/proxyscout.*"
+    - "%{_kf5_datadir}/kcookiejar/domain_info"
 
 SubPackages:
     - Name: devel
@@ -94,39 +94,39 @@ SubPackages:
         The %{name}-devel package contains the files necessary to develop applications
         that use %{name}.
       Requires:
-        - kf5-karchive-devel
-        - kf5-kbookmarks-devel
-        - kf5-kcodecs-devel
-        - kf5-kcompletion-devel
-        - kf5-kconfig-devel
-        - kf5-kconfigwidgets-devel
-        - kf5-kcoreaddons-devel
-        - kf5-kdbusaddons-devel
-        - kf5-kdoctools-devel
-        - kf5-ki18n-devel
-        - kf5-kiconthemes-devel
-        - kf5-kitemviews-devel
-        - kf5-kjobwidgets-devel
-        - kf5-knotifications-devel
-        - kf5-kservice-devel
-        - kf5-solid-devel
-        - kf5-kwidgetsaddons-devel
-        - kf5-kwindowsystem-devel
-        - kf5-kxmlgui-devel
-        - kf5-kwallet-devel
+        - karchive-devel
+        - kbookmarks-devel
+        - kcodecs-devel
+        - kcompletion-devel
+        - kconfig-devel
+        - kconfigwidgets-devel
+        - kcoreaddons-devel
+        - kdbusaddons-devel
+        - kdoctools-devel
+        - ki18n-devel
+        - kiconthemes-devel
+        - kitemviews-devel
+        - kjobwidgets-devel
+        - knotifications-devel
+        - kservice-devel
+        - solid-devel
+        - kwidgetsaddons-devel
+        - kwindowsystem-devel
+        - kxmlgui-devel
+        - kwallet-devel
         - libacl-devel
       Files:
           - "%{_kf5_includedir}/*"
           - "%{_kf5_libdir}/*.so"
-          - "%{_kf5_libdir}/cmake/KF5KIO"
-          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
+          - "%{_kf5_cmakedir}/KF5KIO"
+          - "%{_kf5_mkspecsdir}/*.pri"
     - Name: doc
       Group: Development/Libraries
       Summary: Documentation files for %{name}
       Description: |
         Documentation files for %{name}.
       Requires:
-        - kf5-kio%{?_isa} = %{version}-%{release}
+        - kio%{?_isa} = %{version}-%{release}
       Files:
-          - "%{_kf5_mandir}/man8/*"
-          - "%{_kf5_datadir}/doc/HTML/en/kioslave5/"
+          - "%{_mandir}/man8/*"
+          - "%{_kf5_htmldir}/en/kioslave5/"
