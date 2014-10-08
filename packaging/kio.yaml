@@ -7,7 +7,6 @@ Summary      : KDE Frameworks 5 Tier 3 solution for filesystem abstraction
 Description  : |
   KDE Frameworks 5 Tier 3 solution for filesystem abstraction
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
