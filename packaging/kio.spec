@@ -133,9 +133,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc COPYING.LIB README.md
 %{_kf5_libdir}/*.so.*
-%{_kf5_bindir}/ktelnetservice5
-%{_kf5_bindir}/kcookiejar5
-%{_kf5_bindir}/kmailservice5
+%{_kf5_bindir}/*
 %{_kf5_configdir}/*
 %{_kf5_plugindir}/*
 %{_kf5_libexecdir}/kio_http_cache_cleaner
